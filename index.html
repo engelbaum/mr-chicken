@@ -1,329 +1,661 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mr Chicken — Accueil & Menu</title>
-  <meta name="description" content="Mr Chicken : qualité, goût & fraîcheur. Découvrez notre menu modernisé, galerie, contact et réservation." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
-  <!-- NAV -->
-  <nav>
-    <div class="container nav-inner">
-      <div class="brand">
-        <div class="brand-badge">M</div>
-        <h1>Mr Chicken</h1>
-      </div>
-
-      <div class="menu" id="menu">
-        <a href="#accueil" class="active" data-i18n="nav.home">Accueil</a>
-        <a href="#menu-section" data-i18n="nav.menu">Menu</a>
-        <a href="#chef" data-i18n="nav.chef">Notre Chef</a>
-        <a href="#galerie" data-i18n="nav.gallery">Galerie</a>
-        <a href="#contact" data-i18n="nav.contact">Contact</a>
-        <a href="tel:+32499123456" class="cta" data-i18n="nav.book">Réserver</a>
-      </div>
-
-      <!-- Sélecteur de langue -->
-      <div class="lang-switch">
-        <label class="sr-only" for="lang">Language</label>
-        <select id="lang" aria-label="Language">
-          <option value="fr">FR</option>
-          <option value="nl">NL</option>
-          <option value="en">EN</option>
-        </select>
-      </div>
-
-      <button class="burger" id="burger" aria-label="Ouvrir/fermer le menu">☰</button>
-    </div>
-  </nav>
-
-  <!-- ACCUEIL -->
-  <header id="accueil" class="hero" role="banner" aria-label="Présentation Mr Chicken">
-    <div class="wrap">
-      <h2 data-i18n="hero.title">Qualité, Goût & Fraîcheur</h2>
-      <p data-i18n="hero.subtitle">Wings, tenders, wraps et nans gourmands — la signature Mr Chicken en rouge & noir.</p>
-      <div class="btns">
-        <a class="btn btn-primary" href="#menu-section" data-i18n="hero.btn.menu">Voir le Menu</a>
-        <a class="btn btn-ghost" href="tel:+32499123456" data-i18n="hero.btn.book">Réserver par téléphone</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- MENU -->
-  <section id="menu-section" class="section">
-    <div class="container">
-      <div class="hd">
-        <h3 data-i18n="menu.title">Notre Menu</h3>
-        <span class="note" data-i18n="menu.note">Version web modernisée + affiche complète optimisée</span>
-      </div>
-
-      <!-- Promo -->
-      <div class="promo" aria-label="Mise en avant">
-        <div class="promo-inner">
-          <span class="promo-badge" data-i18n="promo.badge">Nouveau</span>
-          <h4 class="promo-title" data-i18n="promo.title">Mr Chicken, c’est meilleur en vrai</h4>
-          <p class="promo-sub" data-i18n="promo.subtitle">Poulet croustillant, sauces maison, service rapide.</p>
-          <ul class="promo-points">
-            <li><span class="ico">🔥</span><span data-i18n="promo.point1">Wings Hot’n Spicy</span></li>
-            <li><span class="ico">🥗</span><span data-i18n="promo.point2">Ingrédients frais</span></li>
-            <li><span class="ico">⚡</span><span data-i18n="promo.point3">Prêt en quelques minutes</span></li>
-          </ul>
-          <div class="btns">
-            <a class="btn btn-primary" href="#menu-section" data-i18n="promo.btn.menu">Voir le menu</a>
-            <a class="btn btn-ghost" href="tel:+32499123456" data-i18n="promo.btn.call">Réserver</a>
-          </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mr Chicken — Accueil & Menu</title>
+    <meta
+      name="description"
+      content="Mr Chicken : qualité, goût & fraîcheur. Découvrez notre menu modernisé, galerie, contact et réservation." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <div class="container nav-inner">
+        <div class="brand">
+          <div class="brand-badge">M</div>
+          <h1>Mr Chicken</h1>
         </div>
-      </div>
 
-      <!-- Outils -->
-      <div class="toolbar">
-        <div class="controls">
-          <input id="search" type="search"
-                 placeholder="Rechercher (ex : wrap, wings, nan, enfant)"
-                 data-i18n-placeholder="tools.search" aria-label="Rechercher un produit">
-          <select id="sort" aria-label="Trier les produits">
-            <option value="default" data-i18n="tools.sort.default">Tri : défaut</option>
-            <option value="price-asc" data-i18n="tools.sort.asc">Prix croissant</option>
-            <option value="price-desc" data-i18n="tools.sort.desc">Prix décroissant</option>
-            <option value="alpha" data-i18n="tools.sort.alpha">Alphabétique</option>
+        <div class="menu" id="menu">
+          <a href="#accueil" class="active" data-i18n="nav.home">Accueil</a>
+          <a href="#menu-section" data-i18n="nav.menu">Menu</a>
+          <a href="#chef" data-i18n="nav.chef">Notre Chef</a>
+          <a href="#galerie" data-i18n="nav.gallery">Galerie</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+          <a href="tel:+32499123456" class="cta" data-i18n="nav.book"
+            >Réserver</a
+          >
+        </div>
+
+        <!-- Sélecteur de langue -->
+        <div class="lang-switch">
+          <label class="sr-only" for="lang">Language</label>
+          <select id="lang" aria-label="Language">
+            <option value="fr">FR</option>
+            <option value="nl">NL</option>
+            <option value="en">EN</option>
           </select>
         </div>
-        <span class="small" data-i18n="tools.hint">Clique une catégorie pour filtrer.</span>
+
+        <button class="burger" id="burger" aria-label="Ouvrir/fermer le menu">
+          ☰
+        </button>
       </div>
+    </nav>
 
-      <!-- Catégories + Grille -->
-      <div class="catbar" id="catbar"></div>
-      <div class="grid" id="grid" aria-live="polite"></div>
-    </div>
-  </section>
-
-  <!-- CHEF -->
-  <section id="chef" class="section section-alt">
-    <div class="container">
-      <div class="hd">
-        <h3 data-i18n="chef.title">Notre Chef</h3>
-        <span class="note" data-i18n="chef.note">Passion & exigence au service du goût</span>
+    <!-- ACCUEIL -->
+    <header
+      id="accueil"
+      class="hero"
+      role="banner"
+      aria-label="Présentation Mr Chicken">
+      <div class="wrap">
+        <h2 data-i18n="hero.title">Qualité, Goût & Fraîcheur</h2>
+        <p data-i18n="hero.subtitle">
+          Wings, tenders, wraps et nans gourmands — la signature Mr Chicken en
+          rouge & noir.
+        </p>
+        <div class="btns">
+          <a
+            class="btn btn-primary"
+            href="#menu-section"
+            data-i18n="hero.btn.menu"
+            >Voir le Menu</a
+          >
+          <a
+            class="btn btn-ghost"
+            href="tel:+32499123456"
+            data-i18n="hero.btn.book"
+            >Réserver par téléphone</a
+          >
+        </div>
       </div>
+    </header>
 
-      <div class="chef">
-        <div class="ph">
-          <img src="images/murad.png" alt="Notre chef Mr Chicken" loading="lazy">
+    <!-- MENU -->
+    <section id="menu-section" class="section">
+      <div class="container">
+        <div class="hd">
+          <h3 data-i18n="menu.title">Notre Menu</h3>
+          <span class="note" data-i18n="menu.note"
+            >Version web modernisée + affiche complète optimisée</span
+          >
         </div>
 
-        <div>
-          <p data-i18n="chef.desc">Chaque jour, notre équipe cuisine avec des ingrédients frais en respectant la signature Mr Chicken : croustillant parfait, sauces maison et service rapide.</p>
-          <p class="small" data-i18n="chef.badge">Halal • Produits de qualité • Préparation à la commande</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALERIE -->
-  <section id="galerie" class="section">
-    <div class="container">
-      <div class="hd">
-        <h3 data-i18n="gallery.title">Galerie</h3>
-        <span class="note" data-i18n="gallery.note">Ambiance & spécialités</span>
-      </div>
-      <div class="gallery">
-        <div><img src="images/salle%20pricipale.png" alt="Salle principale" loading="lazy"></div>
-        <div><img src="images/contoir.png" alt="Comptoir" loading="lazy"></div>
-        <div><img src="images/cuisine.png" alt="Cuisine" loading="lazy"></div>
-        <div><img src="images/cuisine5.png" alt="Cuisine — dressage" loading="lazy"></div>
-        <div><img src="images/cuisine3.png" alt="Cuisine — équipe" loading="lazy"></div>
-        <div><img src="images/contoir.png" alt="Comptoir — détails" loading="lazy"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section section-alt" itemscope itemtype="https://schema.org/Restaurant">
-    <div class="container">
-      <div class="hd">
-        <h3 itemprop="name">Mr Chicken</h3>
-        <span class="note" data-i18n="contact.note">On vous répond rapidement — réservations par téléphone</span>
-      </div>
-
-      <div class="grid2">
-        <div class="card-lite">
-          <h4 data-i18n="contact.blockTitle">Nous contacter</h4>
-          <p data-i18n="contact.lead">Une question, une commande, une réservation ?</p>
-
-          <div class="btns" style="margin-bottom:10px">
-            <a class="btn btn-primary" href="tel:+32499123456" itemprop="telephone" data-i18n="contact.call">Appeler : +32 4 99 12 34 56</a>
-            <a class="btn btn-ghost" href="https://wa.me/32499123456?text=Bonjour%20Mr%20Chicken%2C%20je%20souhaite%20r%C3%A9server." target="_blank" rel="noopener">WhatsApp</a>
-          </div>
-
-          <dl class="contact-list">
-            <dt data-i18n="contact.phone">Téléphone</dt>
-            <dd><a href="tel:+32499123456" itemprop="telephone">+32 4 99 12 34 56</a></dd>
-
-            <dt data-i18n="contact.email">E-mail</dt>
-            <dd><a href="mailto:contact@mrchicken.be" itemprop="email">contact@mrchicken.be</a></dd>
-
-            <dt data-i18n="contact.address">Adresse</dt>
-            <dd itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-              <a href="https://maps.google.com/?q=Mr+Chicken+Rue+Exemple+1+4000+Li%C3%A8ge" target="_blank" rel="noopener">
-                <span itemprop="streetAddress">Rue Exemple 1</span>,
-                <span itemprop="postalCode">4000</span>
-                <span itemprop="addressLocality">Liège</span>
-              </a>
-            </dd>
-          </dl>
-
-          <p class="small" data-i18n="contact.warning">⚠️ Réservations uniquement par téléphone.</p>
-        </div>
-
-        <div>
-          <div class="card-lite" style="margin-bottom:18px">
-            <h4 data-i18n="hours.title">Horaires</h4>
-            <ul class="hours">
-              <li><span data-i18n="days.mon">Lun</span><span><time itemprop="openingHours" datetime="Mo 11:30-22:30">11h30–22h30</time></span></li>
-              <li><span data-i18n="days.tue">Mar</span><span><time itemprop="openingHours" datetime="Tu 11:30-22:30">11h30–22h30</time></span></li>
-              <li><span data-i18n="days.wed">Mer</span><span><time itemprop="openingHours" datetime="We 11:30-22:30">11h30–22h30</time></span></li>
-              <li><span data-i18n="days.thu">Jeu</span><span><time itemprop="openingHours" datetime="Th 11:30-22:30">11h30–22h30</time></span></li>
-              <li><span data-i18n="days.fri">Ven</span><span><time itemprop="openingHours" datetime="Fr 11:30-23:00">11h30–23h00</time></span></li>
-              <li><span data-i18n="days.sat">Sam</span><span><time itemprop="openingHours" datetime="Sa 11:30-23:00">11h30–23h00</time></span></li>
-              <li><span data-i18n="days.sun">Dim</span><span><time itemprop="openingHours" datetime="Su 11:30-22:30">11h30–22h30</time></span></li>
+        <!-- Promo -->
+        <div class="promo" aria-label="Mise en avant">
+          <div class="promo-inner">
+            <span class="promo-badge" data-i18n="promo.badge">Nouveau</span>
+            <h4 class="promo-title" data-i18n="promo.title">
+              Mr Chicken, c’est meilleur en vrai
+            </h4>
+            <p class="promo-sub" data-i18n="promo.subtitle">
+              Poulet croustillant, sauces maison, service rapide.
+            </p>
+            <ul class="promo-points">
+              <li>
+                <span class="ico">🔥</span
+                ><span data-i18n="promo.point1">Wings Hot’n Spicy</span>
+              </li>
+              <li>
+                <span class="ico">🥗</span
+                ><span data-i18n="promo.point2">Ingrédients frais</span>
+              </li>
+              <li>
+                <span class="ico">⚡</span
+                ><span data-i18n="promo.point3">Prêt en quelques minutes</span>
+              </li>
             </ul>
+            <div class="btns">
+              <a
+                class="btn btn-primary"
+                href="#menu-section"
+                data-i18n="promo.btn.menu"
+                >Voir le menu</a
+              >
+              <a
+                class="btn btn-ghost"
+                href="tel:+32499123456"
+                data-i18n="promo.btn.call"
+                >Réserver</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Outils -->
+        <div class="toolbar">
+          <div class="controls">
+            <input
+              id="search"
+              type="search"
+              placeholder="Rechercher (ex : wrap, wings, nan, enfant)"
+              data-i18n-placeholder="tools.search"
+              aria-label="Rechercher un produit" />
+            <select id="sort" aria-label="Trier les produits">
+              <option value="default" data-i18n="tools.sort.default">
+                Tri : défaut
+              </option>
+              <option value="price-asc" data-i18n="tools.sort.asc">
+                Prix croissant
+              </option>
+              <option value="price-desc" data-i18n="tools.sort.desc">
+                Prix décroissant
+              </option>
+              <option value="alpha" data-i18n="tools.sort.alpha">
+                Alphabétique
+              </option>
+            </select>
+          </div>
+          <span class="small" data-i18n="tools.hint"
+            >Clique une catégorie pour filtrer.</span
+          >
+        </div>
+
+        <!-- Catégories + Grille -->
+        <div class="catbar" id="catbar"></div>
+        <div class="grid" id="grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- CHEF -->
+    <section id="chef" class="section section-alt">
+      <div class="container">
+        <div class="hd">
+          <h3 data-i18n="chef.title">Notre Chef</h3>
+          <span class="note" data-i18n="chef.note"
+            >Passion & exigence au service du goût</span
+          >
+        </div>
+
+        <div class="chef">
+          <div class="ph">
+            <img
+              src="images/murad.png"
+              alt="Notre chef Mr Chicken"
+              loading="lazy" />
           </div>
 
-          <div class="card-lite">
-            <h4 data-i18n="access.title">Accès</h4>
-            <iframe
-              title="Itinéraire vers Mr Chicken"
-              src="https://www.google.com/maps?q=Mr+Chicken+Rue+Exemple+1+4000+Li%C3%A8ge&output=embed"
-              style="width:100%;height:260px;border:0;border-radius:12px"
-              loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-            <p class="small" data-i18n="access.hint">Parking à proximité • Bus 12 & 4 — arrêt Centre</p>
+          <div>
+            <p data-i18n="chef.desc">
+              Chaque jour, notre équipe cuisine avec des ingrédients frais en
+              respectant la signature Mr Chicken : croustillant parfait, sauces
+              maison et service rapide.
+            </p>
+            <p class="small" data-i18n="chef.badge">
+              Halal • Produits de qualité • Préparation à la commande
+            </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>© <span id="year"></span> Mr Chicken — Tous droits réservés.</footer>
+    <!-- GALERIE -->
+    <section id="galerie" class="section">
+      <div class="container">
+        <div class="hd">
+          <h3 data-i18n="gallery.title">Galerie</h3>
+          <span class="note" data-i18n="gallery.note"
+            >Ambiance & spécialités</span
+          >
+        </div>
+        <div class="gallery">
+          <div>
+            <img
+              src="images/salle%20pricipale.png"
+              alt="Salle principale"
+              loading="lazy" />
+          </div>
+          <div>
+            <img src="images/contoir.png" alt="Comptoir" loading="lazy" />
+          </div>
+          <div>
+            <img src="images/cuisine.png" alt="Cuisine" loading="lazy" />
+          </div>
+          <div>
+            <img
+              src="images/cuisine5.png"
+              alt="Cuisine — dressage"
+              loading="lazy" />
+          </div>
+          <div>
+            <img
+              src="images/cuisine3.png"
+              alt="Cuisine — équipe"
+              loading="lazy" />
+          </div>
+          <div>
+            <img
+              src="images/contoir.png"
+              alt="Comptoir — détails"
+              loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- Ton JS principal -->
-  <script src="script.js" defer></script>
+    <!-- CONTACT -->
+    <section
+      id="contact"
+      class="section section-alt"
+      itemscope
+      itemtype="https://schema.org/Restaurant">
+      <div class="container">
+        <div class="hd">
+          <h3 itemprop="name">Mr Chicken</h3>
+          <span class="note" data-i18n="contact.note"
+            >On vous répond rapidement — réservations par téléphone</span
+          >
+        </div>
 
-  <!-- Ajuste le ratio des cadres .media aux images (existantes ET ajoutées dynamiquement) -->
-  <script defer>
-  (function(){
-    const apply = img => {
-      if (!img || !img.parentElement) return;
-      const w = img.naturalWidth, h = img.naturalHeight;
-      if (w && h) img.parentElement.style.aspectRatio = `${w} / ${h}`;
-    };
-    const initFor = img => {
-      if (!img) return;
-      if (img.complete) apply(img);
-      else img.addEventListener('load', () => apply(img), { once:true });
-    };
+        <div class="grid2">
+          <div class="card-lite">
+            <h4 data-i18n="contact.blockTitle">Nous contacter</h4>
+            <p data-i18n="contact.lead">
+              Une question, une commande, une réservation ?
+            </p>
 
-    // au chargement
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.card .media img').forEach(initFor);
-    });
+            <div class="btns" style="margin-bottom: 10px">
+              <a
+                class="btn btn-primary"
+                href="tel:+32499123456"
+                itemprop="telephone"
+                data-i18n="contact.call"
+                >Appeler : +32 4 99 12 34 56</a
+              >
+              <a
+                class="btn btn-ghost"
+                href="https://wa.me/32499123456?text=Bonjour%20Mr%20Chicken%2C%20je%20souhaite%20r%C3%A9server."
+                target="_blank"
+                rel="noopener"
+                >WhatsApp</a
+              >
+            </div>
 
-    // écoute les ajouts futurs (cartes générées par script.js)
-    const mo = new MutationObserver(muts=>{
-      for (const m of muts){
-        m.addedNodes.forEach(node=>{
-          if (node.nodeType !== 1) return;
-          if (node.matches?.('.card .media img')) initFor(node);
-          node.querySelectorAll?.('.card .media img').forEach(initFor);
+            <dl class="contact-list">
+              <dt data-i18n="contact.phone">Téléphone</dt>
+              <dd>
+                <a href="tel:+32499123456" itemprop="telephone"
+                  >+32 4 99 12 34 56</a
+                >
+              </dd>
+
+              <dt data-i18n="contact.email">E-mail</dt>
+              <dd>
+                <a href="mailto:contact@mrchicken.be" itemprop="email"
+                  >contact@mrchicken.be</a
+                >
+              </dd>
+
+              <dt data-i18n="contact.address">Adresse</dt>
+              <dd
+                itemprop="address"
+                itemscope
+                itemtype="https://schema.org/PostalAddress">
+                <a
+                  href="https://maps.google.com/?q=Mr+Chicken+Rue+Exemple+1+4000+Li%C3%A8ge"
+                  target="_blank"
+                  rel="noopener">
+                  <span itemprop="streetAddress">Rue Exemple 1</span>,
+                  <span itemprop="postalCode">4000</span>
+                  <span itemprop="addressLocality">Liège</span>
+                </a>
+              </dd>
+            </dl>
+
+            <p class="small" data-i18n="contact.warning">
+              ⚠️ Réservations uniquement par téléphone.
+            </p>
+          </div>
+
+          <div>
+            <div class="card-lite" style="margin-bottom: 18px">
+              <h4 data-i18n="hours.title">Horaires</h4>
+              <ul class="hours">
+                <li>
+                  <span data-i18n="days.mon">Lun</span
+                  ><span
+                    ><time itemprop="openingHours" datetime="Mo 11:30-22:30"
+                      >11h30–22h30</time
+                    ></span
+                  >
+                </li>
+                <li>
+                  <span data-i18n="days.tue">Mar</span
+                  ><span
+                    ><time itemprop="openingHours" datetime="Tu 11:30-22:30"
+                      >11h30–22h30</time
+                    ></span
+                  >
+                </li>
+                <li>
+                  <span data-i18n="days.wed">Mer</span
+                  ><span
+                    ><time itemprop="openingHours" datetime="We 11:30-22:30"
+                      >11h30–22h30</time
+                    ></span
+                  >
+                </li>
+                <li>
+                  <span data-i18n="days.thu">Jeu</span
+                  ><span
+                    ><time itemprop="openingHours" datetime="Th 11:30-22:30"
+                      >11h30–22h30</time
+                    ></span
+                  >
+                </li>
+                <li>
+                  <span data-i18n="days.fri">Ven</span
+                  ><span
+                    ><time itemprop="openingHours" datetime="Fr 11:30-23:00"
+                      >11h30–23h00</time
+                    ></span
+                  >
+                </li>
+                <li>
+                  <span data-i18n="days.sat">Sam</span
+                  ><span
+                    ><time itemprop="openingHours" datetime="Sa 11:30-23:00"
+                      >11h30–23h00</time
+                    ></span
+                  >
+                </li>
+                <li>
+                  <span data-i18n="days.sun">Dim</span
+                  ><span
+                    ><time itemprop="openingHours" datetime="Su 11:30-22:30"
+                      >11h30–22h30</time
+                    ></span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="card-lite">
+              <h4 data-i18n="access.title">Accès</h4>
+              <iframe
+                title="Itinéraire vers Mr Chicken"
+                src="https://www.google.com/maps?q=Mr+Chicken+Rue+Exemple+1+4000+Li%C3%A8ge&output=embed"
+                style="
+                  width: 100%;
+                  height: 260px;
+                  border: 0;
+                  border-radius: 12px;
+                "
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen></iframe>
+              <p class="small" data-i18n="access.hint">
+                Parking à proximité • Bus 12 & 4 — arrêt Centre
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Mr Chicken — Tous droits réservés.
+    </footer>
+
+    <!-- Ton JS principal -->
+    <script src="script.js" defer></script>
+
+    <!-- Ajuste le ratio des cadres .media aux images (existantes ET ajoutées dynamiquement) -->
+    <script defer>
+      (function () {
+        const apply = (img) => {
+          if (!img || !img.parentElement) return;
+          const w = img.naturalWidth,
+            h = img.naturalHeight;
+          if (w && h) img.parentElement.style.aspectRatio = `${w} / ${h}`;
+        };
+        const initFor = (img) => {
+          if (!img) return;
+          if (img.complete) apply(img);
+          else img.addEventListener("load", () => apply(img), { once: true });
+        };
+
+        // au chargement
+        document.addEventListener("DOMContentLoaded", () => {
+          document.querySelectorAll(".card .media img").forEach(initFor);
+        });
+
+        // écoute les ajouts futurs (cartes générées par script.js)
+        const mo = new MutationObserver((muts) => {
+          for (const m of muts) {
+            m.addedNodes.forEach((node) => {
+              if (node.nodeType !== 1) return;
+              if (node.matches?.(".card .media img")) initFor(node);
+              node.querySelectorAll?.(".card .media img").forEach(initFor);
+            });
+          }
+        });
+        mo.observe(document.body, { childList: true, subtree: true });
+      })();
+    </script>
+
+    <!-- I18N (inchangé, exécuté après) -->
+    <script defer>
+      const I18N = {
+        fr: {
+          "nav.home": "Accueil",
+          "nav.menu": "Menu",
+          "nav.chef": "Notre Chef",
+          "nav.gallery": "Galerie",
+          "nav.contact": "Contact",
+          "nav.book": "Réserver",
+          "hero.title": "Qualité, Goût & Fraîcheur",
+          "hero.subtitle":
+            "Wings, tenders, wraps et nans gourmands — la signature Mr Chicken en rouge & noir.",
+          "hero.btn.menu": "Voir le Menu",
+          "hero.btn.book": "Réserver par téléphone",
+          "menu.title": "Notre Menu",
+          "menu.note": "Version web modernisée + affiche complète optimisée",
+          "menu.posterRef": "Affiche complète — référence",
+          "menu.posterWeb": "Format web",
+          "tools.search": "Rechercher (ex : wrap, wings, nan, enfant)",
+          "tools.sort.default": "Tri : défaut",
+          "tools.sort.asc": "Prix croissant",
+          "tools.sort.desc": "Prix décroissant",
+          "tools.sort.alpha": "Alphabétique",
+          "tools.hint": "Clique une catégorie pour filtrer.",
+          "chef.title": "Fondateur Raisani",
+          "chef.note": "Passion & exigence au service du goût",
+          "chef.desc":
+            "Chaque jour, notre équipe cuisine avec des ingrédients frais en respectant la signature Mr Chicken : croustillant parfait, sauces maison et service rapide.",
+          "chef.badge":
+            "Halal • Produits de qualité • Préparation à la commande",
+          "gallery.title": "Galerie",
+          "gallery.note": "Ambiance & spécialités",
+          "contact.note":
+            "On vous répond rapidement — réservations par téléphone",
+          "contact.blockTitle": "Nous contacter",
+          "contact.lead": "Une question, une commande, une réservation ?",
+          "contact.call": "Appeler : +32 4 99 12 34 56",
+          "contact.phone": "Téléphone",
+          "contact.email": "E-mail",
+          "contact.address": "Adresse",
+          "contact.warning": "⚠️ Réservations uniquement par téléphone.",
+          "hours.title": "Horaires",
+          "days.mon": "Lun",
+          "days.tue": "Mar",
+          "days.wed": "Mer",
+          "days.thu": "Jeu",
+          "days.fri": "Ven",
+          "days.sat": "Sam",
+          "days.sun": "Dim",
+          "access.title": "Accès",
+          "access.hint": "Parking à proximité • Bus 12 & 4 — arrêt Centre",
+          "cat.Tous": "Tous",
+          "cat.Menus": "Menus",
+          "cat.Burgers": "Burgers",
+          "cat.Wraps": "Wraps",
+          "cat.Wings & Co": "Wings & Co",
+          "cat.Nans": "Nans",
+          "cat.Accompagnements": "Accompagnements",
+          "cat.Enfant": "Enfant",
+        },
+        nl: {
+          "nav.home": "Start",
+          "nav.menu": "Menu",
+          "nav.chef": "Onze Chef",
+          "nav.gallery": "Galerij",
+          "nav.contact": "Contact",
+          "nav.book": "Reserveren",
+          "hero.title": "Kwaliteit, Smaak & Versheid",
+          "hero.subtitle":
+            "Wings, tenders, wraps en naan — de Mr Chicken-signatuur in rood & zwart.",
+          "hero.btn.menu": "Menu bekijken",
+          "hero.btn.book": "Telefonisch reserveren",
+          "menu.title": "Ons Menu",
+          "menu.note": "Moderne webversie + geoptimaliseerde affiche",
+          "menu.posterRef": "Volledige affiche — referentie",
+          "menu.posterWeb": "Webformaat",
+          "tools.search": "Zoeken (bv.: wrap, wings, naan, kind)",
+          "tools.sort.default": "Standaard sortering",
+          "tools.sort.asc": "Prijs oplopend",
+          "tools.sort.desc": "Prijs aflopend",
+          "tools.sort.alpha": "Alfabetisch",
+          "tools.hint": "Klik op een categorie om te filteren.",
+          "chef.title": "Oprichter Raisani",
+          "chef.note": "Passie & vakmanschap voor smaak",
+          "chef.desc":
+            "Elke dag kookt ons team met verse ingrediënten volgens de Mr Chicken-signatuur: perfecte crunch, huisgemaakte sauzen en snelle service.",
+          "chef.badge": "Halal • Kwaliteitsproducten • Vers bereid",
+          "gallery.title": "Galerij",
+          "gallery.note": "Sfeer & specialiteiten",
+          "contact.note": "We antwoorden snel — reserveren telefonisch",
+          "contact.blockTitle": "Contact opnemen",
+          "contact.lead": "Vraag, bestelling of reservatie?",
+          "contact.call": "Bellen: +32 4 99 12 34 56",
+          "contact.phone": "Telefoon",
+          "contact.email": "E-mail",
+          "contact.address": "Adres",
+          "contact.warning": "⚠️ Enkel telefonisch reserveren.",
+          "hours.title": "Openingsuren",
+          "days.mon": "Ma",
+          "days.tue": "Di",
+          "days.wed": "Wo",
+          "days.thu": "Do",
+          "days.fri": "Vr",
+          "days.sat": "Za",
+          "days.sun": "Zo",
+          "access.title": "Bereikbaarheid",
+          "access.hint": "Parkeren in de buurt • Bus 12 & 4 — halte Centrum",
+          "cat.Tous": "Alle",
+          "cat.Menus": "Menu’s",
+          "cat.Burgers": "Burgers",
+          "cat.Wraps": "Wraps",
+          "cat.Wings & Co": "Wings & Co",
+          "cat.Nans": "Naans",
+          "cat.Accompagnements": "Bijgerechten",
+          "cat.Enfant": "Kind",
+        },
+        en: {
+          "nav.home": "Home",
+          "nav.menu": "Menu",
+          "nav.chef": "Our Chef",
+          "nav.gallery": "Gallery",
+          "nav.contact": "Contact",
+          "nav.book": "Book",
+          "hero.title": "Quality, Taste & Freshness",
+          "hero.subtitle":
+            "Wings, tenders, wraps and naans — Mr Chicken’s red & black signature.",
+          "hero.btn.menu": "View Menu",
+          "hero.btn.book": "Book by phone",
+          "menu.title": "Our Menu",
+          "menu.note": "Modern web version + optimized poster",
+          "menu.posterRef": "Full poster — reference",
+          "menu.posterWeb": "Web format",
+          "tools.search": "Search (e.g. wrap, wings, naan, kids)",
+          "tools.sort.default": "Default sort",
+          "tools.sort.asc": "Price: low to high",
+          "tools.sort.desc": "Price: high to low",
+          "tools.sort.alpha": "Alphabetical",
+          "tools.hint": "Click a category to filter.",
+          "chef.title": "Founder Raisani",
+          "chef.note": "Passion & high standards for taste",
+          "chef.desc":
+            "Every day our team cooks with fresh ingredients: perfect crunch, homemade sauces and fast service — the Mr Chicken signature.",
+          "chef.badge": "Halal • Quality products • Made to order",
+          "gallery.title": "Gallery",
+          "gallery.note": "Atmosphere & specialties",
+          "contact.note": "We reply quickly — bookings by phone",
+          "contact.blockTitle": "Contact us",
+          "contact.lead": "Any question, order or booking?",
+          "contact.call": "Call: +32 4 99 12 34 56",
+          "contact.phone": "Phone",
+          "contact.email": "Email",
+          "contact.address": "Address",
+          "contact.warning": "⚠️ Bookings by phone only.",
+          "hours.title": "Opening hours",
+          "days.mon": "Mon",
+          "days.tue": "Tue",
+          "days.wed": "Wed",
+          "days.thu": "Thu",
+          "days.fri": "Fri",
+          "days.sat": "Sat",
+          "days.sun": "Sun",
+          "access.title": "Getting here",
+          "access.hint": "Parking nearby • Bus 12 & 4 — stop Center",
+          "cat.Tous": "All",
+          "cat.Menus": "Menus",
+          "cat.Burgers": "Burgers",
+          "cat.Wraps": "Wraps",
+          "cat.Wings & Co": "Wings & Co",
+          "cat.Nans": "Naans",
+          "cat.Accompagnements": "Sides",
+          "cat.Enfant": "Kids",
+        },
+      };
+
+      function applyI18n(lang = "fr") {
+        const d = I18N[lang] || I18N.fr;
+        document.documentElement.lang = lang;
+
+        // Textes
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const k = el.dataset.i18n;
+          if (d[k]) el.textContent = d[k];
+        });
+        // Placeholders
+        document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+          const k = el.dataset.i18nPlaceholder;
+          if (d[k]) el.setAttribute("placeholder", d[k]);
+        });
+        // Catégories (créées par script.js)
+        const map = (txt) => d["cat." + txt] || txt;
+        document.querySelectorAll("#catbar button").forEach((b) => {
+          b.textContent = map(b.textContent.trim());
+        });
+        // Tri
+        document.querySelectorAll("#sort option").forEach((o) => {
+          const k = o.dataset.i18n;
+          if (k && d[k]) o.textContent = d[k];
         });
       }
-    });
-    mo.observe(document.body, { childList:true, subtree:true });
-  })();
-  </script>
 
-  <!-- I18N (inchangé, exécuté après) -->
-  <script defer>
-    const I18N = {
-      fr:{ "nav.home":"Accueil","nav.menu":"Menu","nav.chef":"Notre Chef","nav.gallery":"Galerie","nav.contact":"Contact","nav.book":"Réserver",
-        "hero.title":"Qualité, Goût & Fraîcheur","hero.subtitle":"Wings, tenders, wraps et nans gourmands — la signature Mr Chicken en rouge & noir.",
-        "hero.btn.menu":"Voir le Menu","hero.btn.book":"Réserver par téléphone",
-        "menu.title":"Notre Menu","menu.note":"Version web modernisée + affiche complète optimisée","menu.posterRef":"Affiche complète — référence","menu.posterWeb":"Format web",
-        "tools.search":"Rechercher (ex : wrap, wings, nan, enfant)","tools.sort.default":"Tri : défaut","tools.sort.asc":"Prix croissant","tools.sort.desc":"Prix décroissant","tools.sort.alpha":"Alphabétique","tools.hint":"Clique une catégorie pour filtrer.",
-        "chef.title":"Notre Chef","chef.note":"Passion & exigence au service du goût","chef.desc":"Chaque jour, notre équipe cuisine avec des ingrédients frais en respectant la signature Mr Chicken : croustillant parfait, sauces maison et service rapide.","chef.badge":"Halal • Produits de qualité • Préparation à la commande",
-        "gallery.title":"Galerie","gallery.note":"Ambiance & spécialités",
-        "contact.note":"On vous répond rapidement — réservations par téléphone","contact.blockTitle":"Nous contacter","contact.lead":"Une question, une commande, une réservation ?","contact.call":"Appeler : +32 4 99 12 34 56","contact.phone":"Téléphone","contact.email":"E-mail","contact.address":"Adresse","contact.warning":"⚠️ Réservations uniquement par téléphone.",
-        "hours.title":"Horaires","days.mon":"Lun","days.tue":"Mar","days.wed":"Mer","days.thu":"Jeu","days.fri":"Ven","days.sat":"Sam","days.sun":"Dim",
-        "access.title":"Accès","access.hint":"Parking à proximité • Bus 12 & 4 — arrêt Centre",
-        "cat.Tous":"Tous","cat.Menus":"Menus","cat.Burgers":"Burgers","cat.Wraps":"Wraps","cat.Wings & Co":"Wings & Co","cat.Nans":"Nans","cat.Accompagnements":"Accompagnements","cat.Enfant":"Enfant"
-      },
-      nl:{ "nav.home":"Start","nav.menu":"Menu","nav.chef":"Onze Chef","nav.gallery":"Galerij","nav.contact":"Contact","nav.book":"Reserveren",
-        "hero.title":"Kwaliteit, Smaak & Versheid","hero.subtitle":"Wings, tenders, wraps en naan — de Mr Chicken-signatuur in rood & zwart.",
-        "hero.btn.menu":"Menu bekijken","hero.btn.book":"Telefonisch reserveren",
-        "menu.title":"Ons Menu","menu.note":"Moderne webversie + geoptimaliseerde affiche","menu.posterRef":"Volledige affiche — referentie","menu.posterWeb":"Webformaat",
-        "tools.search":"Zoeken (bv.: wrap, wings, naan, kind)","tools.sort.default":"Standaard sortering","tools.sort.asc":"Prijs oplopend","tools.sort.desc":"Prijs aflopend","tools.sort.alpha":"Alfabetisch","tools.hint":"Klik op een categorie om te filteren.",
-        "chef.title":"Onze Chef","chef.note":"Passie & vakmanschap voor smaak","chef.desc":"Elke dag kookt ons team met verse ingrediënten volgens de Mr Chicken-signatuur: perfecte crunch, huisgemaakte sauzen en snelle service.","chef.badge":"Halal • Kwaliteitsproducten • Vers bereid",
-        "gallery.title":"Galerij","gallery.note":"Sfeer & specialiteiten",
-        "contact.note":"We antwoorden snel — reserveren telefonisch","contact.blockTitle":"Contact opnemen","contact.lead":"Vraag, bestelling of reservatie?","contact.call":"Bellen: +32 4 99 12 34 56","contact.phone":"Telefoon","contact.email":"E-mail","contact.address":"Adres","contact.warning":"⚠️ Enkel telefonisch reserveren.",
-        "hours.title":"Openingsuren","days.mon":"Ma","days.tue":"Di","days.wed":"Wo","days.thu":"Do","days.fri":"Vr","days.sat":"Za","days.sun":"Zo",
-        "access.title":"Bereikbaarheid","access.hint":"Parkeren in de buurt • Bus 12 & 4 — halte Centrum",
-        "cat.Tous":"Alle","cat.Menus":"Menu’s","cat.Burgers":"Burgers","cat.Wraps":"Wraps","cat.Wings & Co":"Wings & Co","cat.Nans":"Naans","cat.Accompagnements":"Bijgerechten","cat.Enfant":"Kind"
-      },
-      en:{ "nav.home":"Home","nav.menu":"Menu","nav.chef":"Our Chef","nav.gallery":"Gallery","nav.contact":"Contact","nav.book":"Book",
-        "hero.title":"Quality, Taste & Freshness","hero.subtitle":"Wings, tenders, wraps and naans — Mr Chicken’s red & black signature.",
-        "hero.btn.menu":"View Menu","hero.btn.book":"Book by phone",
-        "menu.title":"Our Menu","menu.note":"Modern web version + optimized poster","menu.posterRef":"Full poster — reference","menu.posterWeb":"Web format",
-        "tools.search":"Search (e.g. wrap, wings, naan, kids)","tools.sort.default":"Default sort","tools.sort.asc":"Price: low to high","tools.sort.desc":"Price: high to low","tools.sort.alpha":"Alphabetical","tools.hint":"Click a category to filter.",
-        "chef.title":"Our Chef","chef.note":"Passion & high standards for taste","chef.desc":"Every day our team cooks with fresh ingredients: perfect crunch, homemade sauces and fast service — the Mr Chicken signature.","chef.badge":"Halal • Quality products • Made to order",
-        "gallery.title":"Gallery","gallery.note":"Atmosphere & specialties",
-        "contact.note":"We reply quickly — bookings by phone","contact.blockTitle":"Contact us","contact.lead":"Any question, order or booking?","contact.call":"Call: +32 4 99 12 34 56","contact.phone":"Phone","contact.email":"Email","contact.address":"Address","contact.warning":"⚠️ Bookings by phone only.",
-        "hours.title":"Opening hours","days.mon":"Mon","days.tue":"Tue","days.wed":"Wed","days.thu":"Thu","days.fri":"Fri","days.sat":"Sat","days.sun":"Sun",
-        "access.title":"Getting here","access.hint":"Parking nearby • Bus 12 & 4 — stop Center",
-        "cat.Tous":"All","cat.Menus":"Menus","cat.Burgers":"Burgers","cat.Wraps":"Wraps","cat.Wings & Co":"Wings & Co","cat.Nans":"Naans","cat.Accompagnements":"Sides","cat.Enfant":"Kids"
-      }
-    };
+      const langSelect = document.getElementById("lang");
+      const saved =
+        localStorage.getItem("lang") ||
+        (navigator.language || "fr").slice(0, 2);
+      const init = ["fr", "nl", "en"].includes(saved) ? saved : "fr";
+      if (langSelect) langSelect.value = init;
 
-    function applyI18n(lang="fr"){
-      const d = I18N[lang] || I18N.fr;
-      document.documentElement.lang = lang;
-
-      // Textes
-      document.querySelectorAll("[data-i18n]").forEach(el=>{
-        const k = el.dataset.i18n;
-        if(d[k]) el.textContent = d[k];
+      window.addEventListener("DOMContentLoaded", () => applyI18n(init));
+      langSelect?.addEventListener("change", (e) => {
+        const lang = e.target.value;
+        localStorage.setItem("lang", lang);
+        applyI18n(lang);
       });
-      // Placeholders
-      document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{
-        const k = el.dataset.i18nPlaceholder;
-        if(d[k]) el.setAttribute("placeholder", d[k]);
-      });
-      // Catégories (créées par script.js)
-      const map = (txt)=> d["cat."+txt] || txt;
-      document.querySelectorAll("#catbar button").forEach(b=>{
-        b.textContent = map(b.textContent.trim());
-      });
-      // Tri
-      document.querySelectorAll("#sort option").forEach(o=>{
-        const k = o.dataset.i18n;
-        if(k && d[k]) o.textContent = d[k];
-      });
-    }
-
-    const langSelect = document.getElementById("lang");
-    const saved = localStorage.getItem("lang") || (navigator.language||"fr").slice(0,2);
-    const init = ["fr","nl","en"].includes(saved) ? saved : "fr";
-    if(langSelect) langSelect.value = init;
-
-    window.addEventListener("DOMContentLoaded", ()=> applyI18n(init));
-    langSelect?.addEventListener("change", e=>{
-      const lang = e.target.value;
-      localStorage.setItem("lang", lang);
-      applyI18n(lang);
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>

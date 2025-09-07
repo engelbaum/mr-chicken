@@ -1,9 +1,18 @@
 // --- Nav mobile ---
 const burger = document.getElementById('burger');
 const menu = document.getElementById('menu');
-burger?.addEventListener('click', () => menu.classList.toggle('show'));
+
+burger?.addEventListener('click', () => {
+  const willOpen = !menu.classList.contains('show');
+  menu.classList.toggle('show', willOpen);
+  burger.setAttribute('aria-expanded', String(willOpen));
+});
+
 document.querySelectorAll('.menu a').forEach(a => {
-  a.addEventListener('click', () => menu.classList.remove('show'));
+  a.addEventListener('click', () => {
+    menu.classList.remove('show');
+    burger?.setAttribute('aria-expanded', 'false');
+  });
 });
 
 // Année dynamique
@@ -26,7 +35,7 @@ const PRODUCTS = [
   {id:12,cat:"Burgers",name:"Classic Steack (menu)",desc:"Cheese burger + frites + boisson",price:"6,50",img:"images/ClassicSteack.png",tag:"burger"},
   {id:13,cat:"Burgers",name:"Chicken Filet (menu)",desc:"Classic",price:"7,00",img:"images/ChickenFilet.png",tag:"burger"},
   {id:14,cat:"Burgers",name:"Double Filet (menu)",desc:"5 saveurs au choix",price:"8,00",img:"images/DoubleFilet .png",tag:"burger"},
-{id:37,cat:"Burgers",name:"Burger (unité)",price:"2,00",img:"images/Burger.png",tag:"extra"},
+  {id:37,cat:"Burgers",name:"Burger (unité)",price:"2,00",img:"images/Burger.png",tag:"extra"},
 
   {id:15,cat:"Wings & Co",name:"Hot'n Spicy Wings x6",desc:"A - avec boisson",price:"6,50",img:"images/HotSpicyWings6.png",tag:"wings"},
   {id:16,cat:"Wings & Co",name:"Hot'n Spicy Wings x10",desc:"B - avec boisson",price:"7,50",img:"images/HotWings10.png",tag:"wings"},
@@ -54,7 +63,7 @@ const PRODUCTS = [
   {id:34,cat:"Accompagnements",name:"Bâtonnets de mozzarella (x5)",price:"3,50",img:"images/Bâtonnets.png",tag:"side"},
   {id:35,cat:"Accompagnements",name:"Bouchées de camembert (x5)",price:"3,50",img:"images/Bouchéescamembert .png",tag:"side"},
   {id:36,cat:"Accompagnements",name:"Anneaux d’oignons (x6)",price:"3,50",img:"images/Anneaux.png",tag:"side"},
-  
+
   {id:38,cat:"Accompagnements",name:"Wings (x5)",price:"4,50",img:"images/wings.png",tag:"extra"},
   {id:39,cat:"Accompagnements",name:"Tenders (x3)",price:"5,00",img:"images/Tenders.png",tag:"extra"},
   {id:40,cat:"Accompagnements",name:"Nugget’s (x6)",price:"3,00",img:"images/Nugget.png",tag:"extra"},
@@ -133,7 +142,7 @@ function render(){
 }
 render();
 
-// Slogan rotatif (optionnel)
+// Slogan rotatif (respecte prefers-reduced-motion)
 (function(){
   const el = document.querySelector(".promo-sub");
   if(!el) return;
@@ -142,10 +151,33 @@ render();
     "Fraîcheur du jour, goût authentique.",
     "Des wings qui claquent, des wraps qui régalent."
   ];
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce) { el.textContent = lines[0]; return; }
   let i = 0;
   setInterval(()=>{
     i = (i+1)%lines.length;
     el.style.opacity = 0;
     setTimeout(()=>{ el.textContent = lines[i]; el.style.opacity = 1; }, 250);
   }, 3500);
+})();
+
+// Effet ripple sur .btn (désactivé si réduction d’animations)
+(function(){
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce) return;
+  document.addEventListener('click', (e)=>{
+    const b = e.target.closest('.btn');
+    if(!b) return;
+    const rect = b.getBoundingClientRect();
+    const d = Math.max(rect.width, rect.height);
+    const x = e.clientX - rect.left - d/2;
+    const y = e.clientY - rect.top  - d/2;
+    const ripple = document.createElement('span');
+    ripple.className = 'ripple';
+    ripple.style.width = ripple.style.height = d+'px';
+    ripple.style.left = x+'px';
+    ripple.style.top  = y+'px';
+    b.appendChild(ripple);
+    setTimeout(()=> ripple.remove(), 600);
+  });
 })();
